@@ -30,12 +30,18 @@ class AppFlowCoordinator {
     
     func showCarFlow() {
         let mainStoryBoard = UIStoryboard(name: "CarMain", bundle: nil)
-        let tabBarCar = mainStoryBoard.instantiateViewController(withIdentifier: "tabBarCar")
+        let tabBarCarController = mainStoryBoard.instantiateViewController(withIdentifier: "tabBarCar") as! UITabBarController
         
-        let viewModel = DIContainer.shared.makeCarViewModel()
+        if let viewControllers = tabBarCarController.viewControllers, let nav = viewControllers as? [UINavigationController] {
+            nav.forEach { controller in
+                if let vc = controller.viewControllers.first, let vm = vc as? ViewModelable {
+                    let viewModel = DIContainer.shared.makeCarViewModel()
+                    vm.setViewModel(viewModel: viewModel)
+                }
+            }
+        }
         
-        //loginController.start(viewModel: viewModel)
-        
-        self.navigationController.pushViewController(tabBarCar, animated: true)
+        tabBarCarController.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController.pushViewController(tabBarCarController, animated: true)
     }
 }

@@ -14,4 +14,15 @@ class CarViewModel {
         self.carUseCase = carUseCase
     }
     
+    func loadCars(showCars: @escaping ([Car]) -> Void, showError: @escaping (String) -> Void) {
+        self.carUseCase.getCars { result in
+            switch result {
+                case .success(let data):
+                    showCars(data)
+                case .failure(let error):
+                    showError(error.localizedDescription)
+            }
+        }
+    }
+    
 }

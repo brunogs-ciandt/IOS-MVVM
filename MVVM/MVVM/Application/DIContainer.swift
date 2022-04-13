@@ -18,7 +18,7 @@ class DIContainer {
         
         registerRepositories()
         
-        registerRepositories()
+        registerUserCase()
     }
     
     func makeLoginViewModel(showNextFlow: @escaping () -> Void) -> LoginViewModel {
@@ -31,7 +31,13 @@ class DIContainer {
     }
     
     private func registerNetwork(){
-        let urlSession = URLSession(configuration: URLSessionConfiguration.default)
+        let configuration: URLSessionConfiguration = {
+            let config = URLSessionConfiguration.default
+            config.httpAdditionalHeaders = ["Content-Type:": "application/json"]
+            return config
+        }()
+        
+        let urlSession = URLSession(configuration: configuration)
         let networkService = NetworkHttpService(urlSession: urlSession)
         currentContainer.register(INetworkService.self, name: nil) { _ in
             networkService
