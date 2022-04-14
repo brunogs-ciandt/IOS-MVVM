@@ -32,6 +32,7 @@
 		C35BD79D28064A8900C1E66D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BD79C28064A8900C1E66D /* LoginViewModel.swift */; };
 		C35BD7A4280717C700C1E66D /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BD7A3280717C700C1E66D /* ViewModelable.swift */; };
 		C35BD7A628075AAB00C1E66D /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BD7A528075AAB00C1E66D /* CarTableViewCell.swift */; };
+		C36C0D282808B1350040CE69 /* CarRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36C0D272808B1350040CE69 /* CarRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		C35BD79C28064A8900C1E66D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C35BD7A3280717C700C1E66D /* ViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
 		C35BD7A528075AAB00C1E66D /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		C36C0D272808B1350040CE69 /* CarRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepositoryTests.swift; sourceTree = "<group>"; };
 		C9F151C1ABDC878986D31EE8 /* Pods-MVVM-MVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-MVVMUITests.release.xcconfig"; path = "Target Support Files/Pods-MVVM-MVVMUITests/Pods-MVVM-MVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E2238F30D8B2D14AD6CEB9DB /* Pods-MVVM-MVVMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-MVVMUITests.debug.xcconfig"; path = "Target Support Files/Pods-MVVM-MVVMUITests/Pods-MVVM-MVVMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EC24A8D07DA813178B9A7763 /* Pods-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM.release.xcconfig"; path = "Target Support Files/Pods-MVVM/Pods-MVVM.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				C35BD7542805AFC200C1E66D /* MVVMTests.swift */,
+				C36C0D272808B1350040CE69 /* CarRepositoryTests.swift */,
 			);
 			path = MVVMTests;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C36C0D282808B1350040CE69 /* CarRepositoryTests.swift in Sources */,
 				C35BD7552805AFC200C1E66D /* MVVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
