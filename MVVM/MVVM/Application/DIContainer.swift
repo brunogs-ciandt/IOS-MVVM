@@ -25,7 +25,7 @@ class DIContainer {
        return LoginViewModel(showNextFlow: showNextFlow)
     }
     
-    func makeCarViewModel() -> CarViewModel {
+    func makeCarViewModel() -> CarViewModelable {
         let carUseCase = currentContainer.resolve(CarUseCase.self)!
         return CarViewModel(carUseCase: carUseCase)
     }
@@ -39,22 +39,22 @@ class DIContainer {
         
         let urlSession = URLSession(configuration: configuration)
         let networkService = NetworkHttpService(urlSession: urlSession)
-        currentContainer.register(INetworkService.self, name: nil) { _ in
+        currentContainer.register(NetworkServiceable.self, name: nil) { _ in
             networkService
         }
     }
     
     private func registerRepositories() {
-        let networkService = currentContainer.resolve(INetworkService.self)!
+        let networkService = currentContainer.resolve(NetworkServiceable.self)!
 
         let carRepository = CarRepository(networkHttpService: networkService)
-        currentContainer.register(ICarRepository.self, name: nil) { _ in
+        currentContainer.register(CarRepositorable.self, name: nil) { _ in
             carRepository
         }
     }
     
     private func registerUserCase(){
-        let carRepository = currentContainer.resolve(ICarRepository.self)!
+        let carRepository = currentContainer.resolve(CarRepositorable.self)!
         
         currentContainer.register(CarUseCase.self, name: nil) { _ in
             CarUseCase(repository: carRepository)

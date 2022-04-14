@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CarViewModel {
+class CarViewModel : CarViewModelable {
     var carUseCase: CarUseCase!
     
     init(carUseCase: CarUseCase) {

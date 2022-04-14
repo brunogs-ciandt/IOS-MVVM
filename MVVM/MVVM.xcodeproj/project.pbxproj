@@ -19,7 +19,7 @@
 		C35BD7612805AFC200C1E66D /* MVVMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BD7602805AFC200C1E66D /* MVVMUITestsLaunchTests.swift */; };
 		C35BD7732805B13A00C1E66D /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BD7712805B13A00C1E66D /* Car.swift */; };
 		C35BD7742805B13A00C1E66D /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BD7722805B13A00C1E66D /* CarRepository.swift */; };
-		C35BD7782805B23600C1E66D /* ICarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BD7772805B23600C1E66D /* ICarRepository.swift */; };
+		C35BD7782805B23600C1E66D /* CarRepositorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BD7772805B23600C1E66D /* CarRepositorable.swift */; };
 		C35BD77A2805B83300C1E66D /* NetworkHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BD7792805B83300C1E66D /* NetworkHttpService.swift */; };
 		C35BD77D2805D31000C1E66D /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BD77C2805D31000C1E66D /* DIContainer.swift */; };
 		C35BD77F2805D6BC00C1E66D /* CarUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BD77E2805D6BC00C1E66D /* CarUseCase.swift */; };
@@ -70,7 +70,7 @@
 		C35BD7602805AFC200C1E66D /* MVVMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C35BD7712805B13A00C1E66D /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		C35BD7722805B13A00C1E66D /* CarRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarRepository.swift; sourceTree = "<group>"; };
-		C35BD7772805B23600C1E66D /* ICarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICarRepository.swift; sourceTree = "<group>"; };
+		C35BD7772805B23600C1E66D /* CarRepositorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepositorable.swift; sourceTree = "<group>"; };
 		C35BD7792805B83300C1E66D /* NetworkHttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttpService.swift; sourceTree = "<group>"; };
 		C35BD77C2805D31000C1E66D /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		C35BD77E2805D6BC00C1E66D /* CarUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarUseCase.swift; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 		C35BD7762805B21100C1E66D /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C35BD7772805B23600C1E66D /* ICarRepository.swift */,
+				C35BD7772805B23600C1E66D /* CarRepositorable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 				C35BD79D28064A8900C1E66D /* LoginViewModel.swift in Sources */,
 				C35BD77F2805D6BC00C1E66D /* CarUseCase.swift in Sources */,
 				C35BD77D2805D31000C1E66D /* DIContainer.swift in Sources */,
-				C35BD7782805B23600C1E66D /* ICarRepository.swift in Sources */,
+				C35BD7782805B23600C1E66D /* CarRepositorable.swift in Sources */,
 				C35BD7832805F0A300C1E66D /* CarViewModel.swift in Sources */,
 				C35BD7402805AFC000C1E66D /* SceneDelegate.swift in Sources */,
 				C35BD7A4280717C700C1E66D /* ViewModelable.swift in Sources */,

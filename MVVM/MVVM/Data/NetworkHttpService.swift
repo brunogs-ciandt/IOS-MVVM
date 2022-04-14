@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-protocol INetworkService {
+protocol NetworkServiceable {
     typealias Completion<DataType> = (Result<DataType, Error>) -> Void
     
     func fetchRequest<DataType: Decodable>(url: String, result: @escaping Completion<DataType>)
@@ -28,7 +28,7 @@ struct LoginResponse: Codable {
     var token: String
 }
 
-class NetworkHttpService : INetworkService {
+class NetworkHttpService : NetworkServiceable {
     
     private var urlSessionObject: URLSession
     
@@ -59,6 +59,10 @@ class NetworkHttpService : INetworkService {
     }
     
     func loadCarsWithAlamofire() {
+        let manager = NetworkReachabilityManager(host: "www.googole.com")
+        
+        let result = manager?.isReachable ?? false
+        
         let task = DispatchWorkItem{
             self.getDataAlamofire { (result: Result<LoginResponse, Error>) in
                 

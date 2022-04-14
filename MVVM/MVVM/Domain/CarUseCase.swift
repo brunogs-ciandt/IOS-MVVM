@@ -8,9 +8,9 @@
 import Foundation
 
 class CarUseCase {
-    private var carRepository: ICarRepository;
+    private var carRepository: CarRepositorable;
     
-    init(repository: ICarRepository) {
+    init(repository: CarRepositorable) {
         self.carRepository = repository
     }
     

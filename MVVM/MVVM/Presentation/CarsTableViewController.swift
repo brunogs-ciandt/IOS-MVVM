@@ -10,7 +10,7 @@ import UIKit
 class CarsTableViewController: UITableViewController {
 
     
-    var viewModel: CarViewModel!
+    var viewModel: CarViewModelable!
     var cars: [Car] = []
     
     let lblMessage = UILabel()
@@ -75,6 +75,6 @@ class CarsTableViewController: UITableViewController {
 
 extension CarsTableViewController : ViewModelable {
     func setViewModel<ViewModelType>(viewModel: ViewModelType) {
-        self.viewModel = viewModel as? CarViewModel
+        self.viewModel = viewModel as? CarViewModelable
     }
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ICarRepository {
+protocol CarRepositorable {
     func getCars(completion: @escaping (Result<[Car], Error>) -> Void) -> Void
 }

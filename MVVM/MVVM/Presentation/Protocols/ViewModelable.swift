@@ -10,3 +10,7 @@ import Foundation
 protocol ViewModelable {
     func setViewModel<ViewModelType>(viewModel: ViewModelType)
 }
+
+protocol CarViewModelable {
+    func loadCars(showCars: @escaping ([Car]) -> Void, showError: @escaping (String) -> Void)
+}

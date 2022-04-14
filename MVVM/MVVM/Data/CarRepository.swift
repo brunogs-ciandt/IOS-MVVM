@@ -7,20 +7,18 @@
 
 import Foundation
 
-class CarRepository : ICarRepository {
+class CarRepository : CarRepositorable {
     
-    private var networkHttpService: INetworkService;
+    private var networkHttpService: NetworkServiceable;
     
-    init(networkHttpService: INetworkService) {
+    init(networkHttpService: NetworkServiceable) {
         self.networkHttpService = networkHttpService
     }
     
     public func getCars(completion: @escaping (Result<[Car], Error>) -> Void) {
         let baseUrl = "https://carangas.herokuapp.com/cars"
         
-        networkHttpService.loadCarsWithAlamofire()
-        
-        networkHttpService.fetchRequest(url: baseUrl) { (result: Result<[Car], Error>) in
+         networkHttpService.fetchRequest(url: baseUrl) { (result: Result<[Car], Error>) in
             switch result {
             case .success(let data):
                 completion(.success(data))
