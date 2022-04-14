@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 class CarsTableViewController: UITableViewController {
 
+    private var subscriptions = Set<AnyCancellable>()
     
     var viewModel: CarViewModelable!
     var cars: [Car] = []
@@ -33,11 +35,11 @@ class CarsTableViewController: UITableViewController {
             self?.cars = carResult ?? []
             self?.activity.stopAnimating()
             self?.tableView.reloadData()
-        }
+        }.store(in: &subscriptions)
         
         viewModel.error.sink { [weak self] error in
             error.map { self?.showError($0) }
-        }
+        }.store(in: &subscriptions)
         
         viewModel.loadCars()
     }
