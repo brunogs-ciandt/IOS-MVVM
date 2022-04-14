@@ -6,21 +6,33 @@
 //
 
 import Foundation
+import Combine
 
 class CarViewModel : CarViewModelable {
+    @Published private var carList: [Car]!
+    @Published private var errorMessage: String!
+    
+    var cars: Published<[Car]?>.Publisher {
+        $carList
+    }
+    
+    var error: Published<String?>.Publisher {
+        $errorMessage
+    }
+    
     var carUseCase: CarUseCase!
     
     init(carUseCase: CarUseCase) {
         self.carUseCase = carUseCase
     }
     
-    func loadCars(showCars: @escaping ([Car]) -> Void, showError: @escaping (String) -> Void) {
+    func loadCars() {
         self.carUseCase.getCars { result in
             switch result {
                 case .success(let data):
-                    showCars(data)
+                    self.carList = data
                 case .failure(let error):
-                    showError(error.localizedDescription)
+                    self.errorMessage = error.localizedDescription
             }
         }
     }

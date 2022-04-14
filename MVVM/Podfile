@@ -7,7 +7,7 @@ target 'MVVM' do
 
   # Pods for MVVM
   pod 'Swinject'
-  pod 'Alamofire' 
+  pod 'Alamofire'  
 
   target 'MVVMTests' do
     inherit! :search_paths

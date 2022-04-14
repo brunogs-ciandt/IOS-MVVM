@@ -28,19 +28,23 @@ class CarsTableViewController: UITableViewController {
         
         cars = []
         activity.startAnimating()
-        viewModel.loadCars(showCars: showCarList, showError: showError)
-        tableView.reloadData()
+        
+        viewModel.cars.sink { [weak self] carResult in
+            self?.cars = carResult ?? []
+            self?.activity.stopAnimating()
+            self?.tableView.reloadData()
+        }
+        
+        viewModel.error.sink { [weak self] error in
+            error.map { self?.showError($0) }
+        }
+        
+        viewModel.loadCars()
     }
     
     private func showError(_ error: String) {
         guard !error.isEmpty else { return }
         showAlert(title: "Erro ao listar os carros", message: error)
-        activity.stopAnimating()
-        tableView.reloadData()
-    }
-    
-    private func showCarList(_ cars: [Car]) {
-        self.cars = cars
         activity.stopAnimating()
         tableView.reloadData()
     }

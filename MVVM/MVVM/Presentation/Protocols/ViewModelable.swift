@@ -6,11 +6,15 @@
 //
 
 import Foundation
+import Combine
 
 protocol ViewModelable {
     func setViewModel<ViewModelType>(viewModel: ViewModelType)
 }
 
 protocol CarViewModelable {
-    func loadCars(showCars: @escaping ([Car]) -> Void, showError: @escaping (String) -> Void)
+    var cars: Published<[Car]?>.Publisher { get }
+    var error: Published<String?>.Publisher { get }
+    
+    func loadCars()
 }
